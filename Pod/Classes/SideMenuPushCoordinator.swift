@@ -56,8 +56,8 @@ internal final class SideMenuPushCoordinator: Coordinator {
         // is dismissed after showing the appropriate screen
         CATransaction.begin()
         defer { CATransaction.commit() }
-        UIView.animationsEnabled { [weak self] in
-            self?.config.alongsideTransition?()
+        UIView.animationsEnabled {
+            self.config.alongsideTransition?()
         }
 
         if let lastViewController = navigationController.viewControllers.last,
